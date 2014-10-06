@@ -41,4 +41,10 @@ public class Member {
 		return registerDate;
 	}
 
+	public void changePassword(String oldPassword, String newPassword) {
+		if (!oldPassword.equals(password))
+			throw new IdPasswordNotMatchingException();
+		this.password = newPassword;
+	}
+
 }
