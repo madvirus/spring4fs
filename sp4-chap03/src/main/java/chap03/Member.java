@@ -42,7 +42,7 @@ public class Member {
 	}
 
 	public void changePassword(String oldPassword, String newPassword) {
-		if (!oldPassword.equals(password))
+		if (!password.equals(oldPassword))
 			throw new IdPasswordNotMatchingException();
 		this.password = newPassword;
 	}

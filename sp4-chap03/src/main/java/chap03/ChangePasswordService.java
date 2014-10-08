@@ -8,12 +8,12 @@ public class ChangePasswordService {
 		this.memberDao = memberDao;
 	}
 
-	public void changePassword(String email, String oldPassword, String newPassword) {
+	public void changePassword(String email, String oldPwd, String newPwd) {
 		Member member = memberDao.selectByEmail(email);
 		if (member == null)
 			throw new MemberNotFoundException();
 		
-		member.changePassword(oldPassword, newPassword);
+		member.changePassword(oldPwd, newPwd);
 		
 		memberDao.update(member);
 	}
