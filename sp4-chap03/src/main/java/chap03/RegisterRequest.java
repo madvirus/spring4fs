@@ -39,4 +39,8 @@ public class RegisterRequest {
 		this.name = name;
 	}
 
+	public boolean isPasswordEqualToConfirmPassword() {
+		return password.equals(confirmPassword);
+	}
+
 }
