@@ -4,11 +4,16 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import chap03.assembler.Assembler;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
-public class MainForAssembler {
+public class MainForSpring {
 
+	private static ApplicationContext ctx = null;
+	
 	public static void main(String[] args) throws IOException {
+		ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
+		
 		BufferedReader reader = 
 				new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
@@ -29,14 +34,13 @@ public class MainForAssembler {
 		}
 	}
 
-	private static Assembler assembler = new Assembler();
-
 	private static void processNewCommand(String[] arg) {
 		if (arg.length != 5) {
 			printHelp();
 			return;
 		}
-		MemberRegisterService regSvc = assembler.getMemberRegisterService();
+		MemberRegisterService regSvc = 
+				ctx.getBean("memberRegSvc", MemberRegisterService.class);
 		RegisterRequest req = new RegisterRequest();
 		req.setEmail(arg[1]);
 		req.setName(arg[2]);
@@ -61,7 +65,7 @@ public class MainForAssembler {
 			return;
 		}
 		ChangePasswordService changePwdSvc = 
-				assembler.getChangePasswordService();
+				ctx.getBean("changePwdSvc", ChangePasswordService.class);
 		try {
 			changePwdSvc.changePassword(arg[1], arg[2], arg[3]);
 			System.out.println("암호를 변경했습니다.\n");
