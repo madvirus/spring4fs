@@ -35,6 +35,9 @@ public class MainForSpring2 {
 			} else if (command.startsWith("info ")) {
 				processInfoCommand(command.split(" "));
 				continue;
+			} else if (command.equals("version")) {
+				processVersionCommand();
+				continue;
 			}
 			printHelp();
 		}
@@ -88,12 +91,14 @@ public class MainForSpring2 {
 		System.out.println("명령어 사용법:");
 		System.out.println("new 이메일 이름 암호 암호확인");
 		System.out.println("change 이메일 현재비번 변경비번");
+		System.out.println("list");
 		System.out.println("info 이메일");
+		System.out.println("version");
 		System.out.println();
 	}
 
 	private static void processListCommand() {
-		MemberListPrinter listPrinter = 
+		MemberListPrinter listPrinter =
 				ctx.getBean("listPrinter", MemberListPrinter.class);
 		listPrinter.printAll();
 	}
@@ -106,6 +111,12 @@ public class MainForSpring2 {
 		MemberInfoPrinter infoPrinter =
 				ctx.getBean("infoPrinter", MemberInfoPrinter.class);
 		infoPrinter.printMemberInfo(arg[1]);
+	}
+
+	private static void processVersionCommand() {
+		VersionPrinter versionPrinter =
+				ctx.getBean("versionPrinter", VersionPrinter.class);
+		versionPrinter.print();
 	}
 
 }

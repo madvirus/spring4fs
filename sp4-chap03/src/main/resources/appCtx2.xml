@@ -28,4 +28,18 @@
 		<property name="memberDao" ref="memberDao" />
 		<property name="printer" ref="memberPrinter" />
 	</bean>
-</beans>
+
+  	<bean id="versionPrinter" class="chap03.VersionPrinter">
+		<property name="majorVersion" value="4" />
+		<property name="minorVersion">
+			<value>1</value>
+		</property>
+	</bean>
+<!--
+ 	<bean id="versionPrinter" class="chap03.VersionPrinter">
+		<constructor-arg value="4" />
+		<constructor-arg value="1" />
+	</bean>
+ -->
+ 
+ </beans>
