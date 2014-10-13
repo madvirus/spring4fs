@@ -3,20 +3,23 @@ package chap03;
 public class MemberInfoPrinter {
 
 	private MemberDao memDao;
+	private MemberPrinter printer;
 
-	public void setMemDao(MemberDao memberDao) {
+	public void setMemberDao(MemberDao memberDao) {
 		this.memDao = memberDao;
+	}
+
+	public void setPrinter(MemberPrinter printer) {
+		this.printer = printer;
 	}
 
 	public void printMemberInfo(String email) {
 		Member member = memDao.selectByEmail(email);
 		if (member == null) {
-			System.out.println("데이터 없음");
+			System.out.println("데이터 없음\n");
 			return;
 		}
-		System.out.printf(
-				"회원 정보: 아이디=%d, 이메일=%s, 이름=%s, 등록일=%F\n",
-				member.getId(), member.getEmail(),
-				member.getName(), member.getRegisterDate());
+		printer.print(member);
+		System.out.println();
 	}
 }

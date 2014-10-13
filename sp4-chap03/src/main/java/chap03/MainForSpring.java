@@ -12,7 +12,7 @@ public class MainForSpring {
 	private static ApplicationContext ctx = null;
 	
 	public static void main(String[] args) throws IOException {
-		ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
+		ctx = new GenericXmlApplicationContext("classpath:appCtx.xml");
 		
 		BufferedReader reader = 
 				new BufferedReader(new InputStreamReader(System.in));

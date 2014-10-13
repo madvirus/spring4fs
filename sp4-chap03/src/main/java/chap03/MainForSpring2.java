@@ -12,7 +12,7 @@ public class MainForSpring2 {
 	private static ApplicationContext ctx = null;
 
 	public static void main(String[] args) throws IOException {
-		ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
+		ctx = new GenericXmlApplicationContext("classpath:appCtx2.xml");
 
 		BufferedReader reader =
 				new BufferedReader(new InputStreamReader(System.in));
@@ -28,6 +28,9 @@ public class MainForSpring2 {
 				continue;
 			} else if (command.startsWith("change ")) {
 				processChangeCommand(command.split(" "));
+				continue;
+			} else if (command.equals("list")) {
+				processListCommand();
 				continue;
 			} else if (command.startsWith("info ")) {
 				processInfoCommand(command.split(" "));
@@ -79,6 +82,22 @@ public class MainForSpring2 {
 		}
 	}
 
+	private static void printHelp() {
+		System.out.println();
+		System.out.println("잘못된 명령입니다. 아래 명령어 사용법을 확인하세요.");
+		System.out.println("명령어 사용법:");
+		System.out.println("new 이메일 이름 암호 암호확인");
+		System.out.println("change 이메일 현재비번 변경비번");
+		System.out.println("info 이메일");
+		System.out.println();
+	}
+
+	private static void processListCommand() {
+		MemberListPrinter listPrinter = 
+				ctx.getBean("listPrinter", MemberListPrinter.class);
+		listPrinter.printAll();
+	}
+
 	private static void processInfoCommand(String[] arg) {
 		if (arg.length != 2) {
 			printHelp();
@@ -89,13 +108,4 @@ public class MainForSpring2 {
 		infoPrinter.printMemberInfo(arg[1]);
 	}
 
-	private static void printHelp() {
-		System.out.println();
-		System.out.println("잘못된 명령입니다. 아래 명령어 사용법을 확인하세요.");
-		System.out.println("명령어 사용법:");
-		System.out.println("new 이메일 이름 암호 암호확인");
-		System.out.println("change 이메일 현재비번 변경비번");
-		System.out.println("info 이메일");
-		System.out.println();
-	}
 }

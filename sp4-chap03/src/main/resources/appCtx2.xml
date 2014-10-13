@@ -16,7 +16,16 @@
 		<constructor-arg ref="memberDao" />
 	</bean>
 
+	<bean id="listPrinter" class="chap03.MemberListPrinter">
+		<constructor-arg ref="memberDao" />
+		<constructor-arg ref="memberPrinter" />
+	</bean>
+	
+	<bean id="memberPrinter" class="chap03.MemberPrinter">
+	</bean>
+	
 	<bean id="infoPrinter" class="chap03.MemberInfoPrinter">
-		<property name="memDao" ref="memberDao" />
+		<property name="memberDao" ref="memberDao" />
+		<property name="printer" ref="memberPrinter" />
 	</bean>
 </beans>
