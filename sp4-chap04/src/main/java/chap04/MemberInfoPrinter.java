@@ -1,7 +1,10 @@
 package chap04;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class MemberInfoPrinter {
 
+	@Autowired
 	private MemberDao memDao;
 	private MemberPrinter printer;
 
@@ -9,6 +12,7 @@ public class MemberInfoPrinter {
 		this.memDao = memberDao;
 	}
 
+	@Autowired
 	public void setPrinter(MemberPrinter printer) {
 		this.printer = printer;
 	}

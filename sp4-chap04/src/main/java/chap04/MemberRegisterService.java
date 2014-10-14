@@ -2,9 +2,12 @@ package chap04;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class MemberRegisterService {
 	private MemberDao memberDao;
 
+	@Autowired
 	public MemberRegisterService(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
