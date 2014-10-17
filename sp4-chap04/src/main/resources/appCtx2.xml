@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	
+	<bean id="memberDao" class="chap04.MemberDao">
+	</bean>
+
+	<bean id="memberRegSvc" class="chap04.MemberRegisterService">
+	</bean>
+	
+	<bean id="printer1" class="chap04.MemberPrinter">
+	</bean>
+	<bean id="printer2" class="chap04.MemberPrinter">
+	</bean>
+	
+	<bean id="infoPrinter" class="chap04.MemberInfoPrinter">
+	</bean>
+ 
+ </beans>
