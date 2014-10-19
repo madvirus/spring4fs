@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MemberInfoPrinter {
 
-	@Autowired
+	@Autowired(required=false)
 	private MemberDao memDao;
 	private MemberPrinter printer;
 
@@ -14,7 +14,7 @@ public class MemberInfoPrinter {
 	}
 
 	@Autowired
-	@Qualifier("sysout")
+	//@Qualifier("sysout")
 	public void setPrinter(MemberPrinter printer) {
 		this.printer = printer;
 	}

@@ -19,8 +19,8 @@
 	<bean id="printer1" class="chap04.MemberPrinter">
 		<qualifier value="sysout" />
 	</bean>
-	<bean id="printer2" class="chap04.MemberPrinter">
-	</bean>
+
+	<bean id="printer2" class="chap04.MemberPrinter" />
 	
 	<bean id="infoPrinter" class="chap04.MemberInfoPrinter">
 	</bean>
