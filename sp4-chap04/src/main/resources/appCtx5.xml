@@ -12,7 +12,7 @@
 	<bean id="memberRegSvc" class="chap04.MemberRegisterService" />
 	
 	<bean id="printer" class="chap04.MemberPrinter" />
-	<bean id="printer2" class="chap04.MemberPrinter2" />
+	<bean id="printer2" class="chap04.MemberPrinter" />
 	
 	<bean id="infoPrinter" class="chap04.MemberInfoPrinter">
 		<property name="printer" ref="printer2" />

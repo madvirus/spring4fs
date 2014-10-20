@@ -18,6 +18,7 @@ public class MemberInfoPrinter {
 	@Autowired
 	//@Qualifier("sysout")
 	public void setPrinter(MemberPrinter printer) {
+		System.out.println("setPrinter: " + printer);
 		this.printer = printer;
 	}
 
