@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -7,22 +6,15 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
-
 	<context:annotation-config />
-	
-	<bean id="memberDao" class="chap04.MemberDao">
-	</bean>
+    <bean id="memberDao" class="chap04.MemberDao" />
 
-	<bean id="memberRegSvc" class="chap04.MemberRegisterService">
-	</bean>
+	<bean id="memberRegSvc" class="chap04.MemberRegisterService" />
 	
-	<bean id="printer1" class="chap04.MemberPrinter">
- 		<qualifier value="sysout" />
-	</bean>
-
-	<bean id="printer2" class="chap04.MemberPrinter" />
+	<bean id="printer" class="chap04.MemberPrinter" />
+	<bean id="printer2" class="chap04.MemberPrinter2" />
 	
 	<bean id="infoPrinter" class="chap04.MemberInfoPrinter">
+		<property name="printer" ref="printer2" />
 	</bean>
- 
  </beans>
