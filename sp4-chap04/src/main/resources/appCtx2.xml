@@ -10,18 +10,18 @@
 
 	<context:annotation-config />
 	
-	<bean id="memberDao" class="chap04.MemberDao">
+	<bean id="memberDao" class="spring.MemberDao">
 	</bean>
 
-	<bean id="memberRegSvc" class="chap04.MemberRegisterService">
+	<bean id="memberRegSvc" class="spring.MemberRegisterService">
 	</bean>
 	
-	<bean id="printer1" class="chap04.MemberPrinter">
+	<bean id="printer1" class="spring.MemberPrinter">
 	</bean>
-	<bean id="printer2" class="chap04.MemberPrinter">
+	<bean id="printer2" class="spring.MemberPrinter">
 	</bean>
 	
-	<bean id="infoPrinter" class="chap04.MemberInfoPrinter">
+	<bean id="infoPrinter" class="spring.MemberInfoPrinter">
 	</bean>
  
  </beans>

@@ -5,10 +5,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="memberDao" class="chap03.MemberDao">
+	<bean id="memberDao" class="spring.MemberDao">
 	</bean>
 	
-	<bean id="memberPrinter" class="chap03.MemberPrinter">
+	<bean id="memberPrinter" class="spring.MemberPrinter">
 	</bean>
 	 
  </beans>

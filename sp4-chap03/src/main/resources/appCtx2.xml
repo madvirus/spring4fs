@@ -5,38 +5,38 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="memberDao" class="chap03.MemberDao">
+	<bean id="memberDao" class="spring.MemberDao">
 	</bean>
 
-	<bean id="memberRegSvc" class="chap03.MemberRegisterService">
+	<bean id="memberRegSvc" class="spring.MemberRegisterService">
 		<constructor-arg ref="memberDao" />
 	</bean>
 
-	<bean id="changePwdSvc" class="chap03.ChangePasswordService">
+	<bean id="changePwdSvc" class="spring.ChangePasswordService">
 		<constructor-arg ref="memberDao" />
 	</bean>
 
-	<bean id="listPrinter" class="chap03.MemberListPrinter">
+	<bean id="listPrinter" class="spring.MemberListPrinter">
 		<constructor-arg ref="memberDao" />
 		<constructor-arg ref="memberPrinter" />
 	</bean>
 	
-	<bean id="memberPrinter" class="chap03.MemberPrinter">
+	<bean id="memberPrinter" class="spring.MemberPrinter">
 	</bean>
 	
-	<bean id="infoPrinter" class="chap03.MemberInfoPrinter">
+	<bean id="infoPrinter" class="spring.MemberInfoPrinter">
 		<property name="memberDao" ref="memberDao" />
 		<property name="printer" ref="memberPrinter" />
 	</bean>
 
-  	<bean id="versionPrinter" class="chap03.VersionPrinter">
+  	<bean id="versionPrinter" class="spring.VersionPrinter">
 		<property name="majorVersion" value="4" />
 		<property name="minorVersion">
 			<value>1</value>
 		</property>
 	</bean>
 <!--
- 	<bean id="versionPrinter" class="chap03.VersionPrinter">
+ 	<bean id="versionPrinter" class="spring.VersionPrinter">
 		<constructor-arg value="4" />
 		<constructor-arg value="1" />
 	</bean>

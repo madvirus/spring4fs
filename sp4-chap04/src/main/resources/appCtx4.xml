@@ -11,11 +11,11 @@
 
     <!-- @Autowired 애노테이션에 적용된 생성자에 주입할 
          MemberDao 타입의 빈 객체가 존재하지 않음 -->
-	<bean id="memberRegSvc" class="chap04.MemberRegisterService" />
+	<bean id="memberRegSvc" class="spring.MemberRegisterService" />
 	
-	<bean id="printer" class="chap04.MemberPrinter" />
+	<bean id="printer" class="spring.MemberPrinter" />
 	
 	<!-- @Autowired 애노테이션에 적용된 memDao 필드에 주입할
 	     MemberDao 타입의 빈 객체가 존재하지 않음 -->
-	<bean id="infoPrinter" class="chap04.MemberInfoPrinter" />
+	<bean id="infoPrinter" class="spring.MemberInfoPrinter" />
  </beans>

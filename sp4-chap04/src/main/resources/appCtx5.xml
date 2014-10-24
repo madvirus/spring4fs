@@ -7,14 +7,14 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
 	<context:annotation-config />
-    <bean id="memberDao" class="chap04.MemberDao" />
+    <bean id="memberDao" class="spring.MemberDao" />
 
-	<bean id="memberRegSvc" class="chap04.MemberRegisterService" />
+	<bean id="memberRegSvc" class="spring.MemberRegisterService" />
 	
-	<bean id="printer" class="chap04.MemberPrinter" />
-	<bean id="printer2" class="chap04.MemberPrinter" />
+	<bean id="printer" class="spring.MemberPrinter" />
+	<bean id="printer2" class="spring.MemberPrinter" />
 	
-	<bean id="infoPrinter" class="chap04.MemberInfoPrinter">
+	<bean id="infoPrinter" class="spring.MemberInfoPrinter">
 		<property name="printer" ref="printer2" />
 	</bean>
  </beans>
