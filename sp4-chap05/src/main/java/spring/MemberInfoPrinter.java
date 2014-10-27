@@ -1,11 +1,13 @@
 package spring;
 
+
 public class MemberInfoPrinter {
 
 	private MemberDao memDao;
 	private MemberPrinter printer;
 
 	public void setMemberDao(MemberDao memberDao) {
+		System.out.println("MemberInfoPrinter 주입: " + memberDao);
 		this.memDao = memberDao;
 	}
 

@@ -6,13 +6,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import spring.MemberInfoPrinter;
 import spring.MemberRegisterService;
 import spring.RegisterRequest;
-import config.JavaConfig;
+import config.JavaConfig2;
 
-public class Main {
+public class Main2 {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = 
-				new AnnotationConfigApplicationContext(JavaConfig.class);
+				new AnnotationConfigApplicationContext(JavaConfig2.class);
 		MemberRegisterService regSvc = 
 				ctx.getBean("memberRegSvc", MemberRegisterService.class);
 		MemberInfoPrinter infoPrinter = 
