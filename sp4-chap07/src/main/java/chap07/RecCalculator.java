@@ -9,4 +9,5 @@ public class RecCalculator implements Calcuator {
 		else
 			return num * factorial(num);
 	}
+
 }
