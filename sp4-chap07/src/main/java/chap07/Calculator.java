@@ -1,6 +1,6 @@
 package chap07;
 
-public interface Calcuator {
+public interface Calculator {
 
 	public long factorial(long num);
 
