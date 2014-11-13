@@ -2,6 +2,7 @@ package spring;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.List;
 
@@ -23,20 +24,21 @@ public class MemberDao {
 				new RowMapper<Member>() {
 					@Override
 					public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
-						return null;
+						Member member = new Member(rs.getString("EMAIL"),
+								rs.getString("PASSWORD"), rs.getString("NAME"), rs.getTimestamp("REGDATE"));
+						member.setId(rs.getLong("ID"));
+						return member;
 					}
 				},
 				email);
 
-		if (results.isEmpty())
-			return null;
-		else
-			return results.get(0);
+		return results.isEmpty() ? null : results.get(0);
 	}
 
 	public void insert(Member member) {
 		jdbcTemplate.update("insert into MEMBER (EMAIL, PASSWORD, NAME, REGDATE) values (?, ?, ?, ?)",
-				member.getEmail(), member.getPassword(), member.getName(), member.getRegisterDate());
+				member.getEmail(), member.getPassword(), member.getName(),
+				new Timestamp(member.getRegisterDate().getTime()));
 	}
 
 	public void update(Member member) {
@@ -49,7 +51,10 @@ public class MemberDao {
 				new RowMapper<Member>() {
 					@Override
 					public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
-						return null;
+						Member member = new Member(rs.getString("EMAIL"),
+								rs.getString("PASSWORD"), rs.getString("NAME"), rs.getTimestamp("REGDATE"));
+						member.setId(rs.getLong("ID"));
+						return member;
 					}
 				});
 		return results;
