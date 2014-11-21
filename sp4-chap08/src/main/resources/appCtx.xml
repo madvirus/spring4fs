@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
@@ -16,12 +19,19 @@
 	<bean id="memberDao" class="spring.MemberDao">
 		<constructor-arg ref="dataSource" />
 	</bean>
+	
+	<bean id="transactionManager" 
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" /> 
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 
-	<bean id="memberRegSvc" class="spring.MemberRegisterService">
+	<bean id="changePwdSvc" class="spring.ChangePasswordService">
 		<constructor-arg ref="memberDao" />
 	</bean>
 
-	<bean id="changePwdSvc" class="spring.ChangePasswordService">
+<!-- 	<bean id="memberRegSvc" class="spring.MemberRegisterService">
 		<constructor-arg ref="memberDao" />
 	</bean>
 
@@ -36,6 +46,6 @@
 	<bean id="infoPrinter" class="spring.MemberInfoPrinter">
 		<property name="memberDao" ref="memberDao" />
 		<property name="printer" ref="memberPrinter" />
-	</bean>
+	</bean> -->
 
 </beans>

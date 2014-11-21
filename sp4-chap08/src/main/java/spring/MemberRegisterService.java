@@ -2,6 +2,8 @@ package spring;
 
 import java.util.Date;
 
+import org.springframework.transaction.annotation.Transactional;
+
 public class MemberRegisterService {
 	private MemberDao memberDao;
 
@@ -9,6 +11,7 @@ public class MemberRegisterService {
 		this.memberDao = memberDao;
 	}
 
+	@Transactional
 	public void regist(RegisterRequest req) {
 		Member member = memberDao.selectByEmail(req.getEmail());
 		if (member != null) {
