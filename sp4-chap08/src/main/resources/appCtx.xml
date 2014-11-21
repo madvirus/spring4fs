@@ -31,7 +31,7 @@
 		<constructor-arg ref="memberDao" />
 	</bean>
 
-<!-- 	<bean id="memberRegSvc" class="spring.MemberRegisterService">
+ 	<bean id="memberRegSvc" class="spring.MemberRegisterService">
 		<constructor-arg ref="memberDao" />
 	</bean>
 
@@ -46,6 +46,6 @@
 	<bean id="infoPrinter" class="spring.MemberInfoPrinter">
 		<property name="memberDao" ref="memberDao" />
 		<property name="printer" ref="memberPrinter" />
-	</bean> -->
+	</bean>
 
 </beans>

@@ -32,7 +32,7 @@ public class MainJdbc {
 			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				 member = new Member(rs.getString("EMAIL"),
+				member = new Member(rs.getString("EMAIL"),
 						rs.getString("PASSWORD"),
 						rs.getString("NAME"),
 						rs.getTimestamp("REGDATE"));
@@ -46,27 +46,21 @@ public class MainJdbc {
 			throw e;
 		} finally {
 			if (rs != null)
-				try { rs.close(); } catch (SQLException e2) {}
+				try {
+					rs.close();
+				} catch (SQLException e2) {
+				}
 			if (pstmt != null)
-				try { pstmt.close(); } catch (SQLException e1) {}
+				try {
+					pstmt.close();
+				} catch (SQLException e1) {
+				}
 			if (conn != null)
-				try { conn.close(); } catch (SQLException e) {}
+				try {
+					conn.close();
+				} catch (SQLException e) {
+				}
 		}
 	}
-	
-	public static void insert() {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/spring4fs", "spring4", "spring4");
-			conn.setAutoCommit(false);
-			conn.commit();
-		} catch(SQLException ex) {
-			if (conn != null)
-				try { conn.rollback(); } catch (SQLException e) {}
-		} finally {
-			if (conn != null)
-				try { conn.close(); } catch (SQLException e) {}
-		}
-	}
+
 }
