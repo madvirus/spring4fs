@@ -18,7 +18,7 @@ public class MainJdbc {
 			return;
 		}
 		Member member = getMember("madvirus@madvirus.net");
-		System.out.println(member);
+		System.out.println(member.getEmail() + ", " + member.getName());
 	}
 
 	private static Member getMember(String email) throws SQLException {
@@ -27,7 +27,7 @@ public class MainJdbc {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/spring4fs", "spring4", "spring4");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/spring4fs?characterEncoding=utf8", "spring4", "spring4");
 			pstmt = conn.prepareStatement("select * from MEMBER where EMAIL = ?");
 			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
