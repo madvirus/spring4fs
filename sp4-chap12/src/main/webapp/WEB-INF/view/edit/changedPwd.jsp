@@ -4,12 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><spring:message code="member.register" /></title>
+	<title><spring:message code="change.pwd.title" /></title>
 </head>
 <body>
 	<p>
-		<spring:message code="register.done"
-			arguments="${registerRequest.name}" />
+		<spring:message code="change.pwd.done" />
 	</p>
 	<p>
 		<a href="<c:url value='/main'/>">

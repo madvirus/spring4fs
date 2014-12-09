@@ -4,21 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><spring:message code="member.register" /></title>
+	<title><spring:message code="login.title" /></title>
 </head>
 <body>
-	<h2><spring:message code="member.info" /></h2>
-	<form:form action="step3" commandName="registerRequest">
+	<form:form commandName="loginCommand">
+	<form:errors />
 	<p>
 		<label><spring:message code="email" />:<br>
 		<form:input path="email" />
 		<form:errors path="email"/>
-		</label>
-	</p>
-	<p>
-		<label><spring:message code="name" />:<br>
-		<form:input path="name" />
-		<form:errors path="name"/>
 		</label>
 	</p>
 	<p>
@@ -28,12 +22,11 @@
 		</label>
 	</p>
 	<p>
-		<label><spring:message code="password.confirm" />:<br>
-		<form:password path="confirmPassword" />
-		<form:errors path="confirmPassword"/>
+		<label><spring:message code="rememberEmail" />:
+		<form:checkbox path="rememberEmail"/> 
 		</label>
 	</p>
-	<input type="submit" value="<spring:message code="register.btn" />">
+	<input type="submit" value="<spring:message code="login.btn" />">
 	</form:form>
 </body>
 </html>
