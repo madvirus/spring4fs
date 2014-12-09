@@ -18,7 +18,7 @@ public class AuthCheckInterceptor extends HandlerInterceptorAdapter {
 				return true;
 			}
 		}
-		response.sendRedirect("/sp4-chap12/login");
+		response.sendRedirect(request.getContextPath()+"/login");
 		return false;
 	}
 	
