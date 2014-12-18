@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/survey")
@@ -19,6 +20,15 @@ public class SurveyController {
 		model.addAttribute("questions", questions);
 		return "survey/surveyForm";
 	}
+	
+//	@RequestMapping(method = RequestMethod.GET)
+//	public ModelAndView form() {
+//		List<Question> questions = createQuestions();
+//		ModelAndView mav = new ModelAndView();
+//		mav.addObject("questions", questions);
+//		mav.setViewName("survey/surveyForm");
+//		return mav;
+//	}
 
 	private List<Question> createQuestions() {
 		Question q1 = new Question("당신의 역할은 무엇입니까?", 
