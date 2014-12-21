@@ -1,6 +1,11 @@
 스프링4 입문 예제 코드
 =======
 
+# 소스 코드 다운로드
+
+* 메이븐 프로젝트 다운로드: 이 화면의 우측에 있는 [Download Zip](https://github.com/madvirus/spring4fs/archive/master.zip) 링크를 누르면 소스 코드를 다운로드 받는다.
+* 이클립스 프로젝트 다운로드: [소스 다운로드](https://drive.google.com/file/d/0B2WFL4DD6ByETkxUZmNmNmpFTXc/view?usp=sharing)
+
 # 사전 준비
 ## 이클립스 설정
 제공되는 소스는 메이븐 프로젝트이며 다음을 기준으로 작성되었다.
