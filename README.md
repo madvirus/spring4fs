@@ -3,8 +3,8 @@
 
 # 소스 코드 다운로드
 
-* 메이븐 프로젝트 다운로드: 이 화면의 우측에 있는 [Download Zip](https://github.com/madvirus/spring4fs/archive/master.zip) 링크를 누르면 소스 코드를 다운로드 받는다.
-* 이클립스 프로젝트 다운로드: [다운로드 페이지](https://drive.google.com/file/d/0B2WFL4DD6ByETkxUZmNmNmpFTXc/view?usp=sharing) 로 이동한 뒤, 상단의 다운로드 아이콘을 클릭해서 다운로드 받는다.
+* **메이븐 프로젝트** 다운로드: 이 화면의 우측에 있는 [Download Zip](https://github.com/madvirus/spring4fs/archive/master.zip) 링크를 누르면 소스 코드를 다운로드 받는다.
+* **이클립스 프로젝트** 다운로드: [다운로드 페이지](https://drive.google.com/file/d/0B2WFL4DD6ByETkxUZmNmNmpFTXc/view?usp=sharing) 로 이동한 뒤, 상단의 다운로드 아이콘을 클릭해서 다운로드 받는다.
 
 # 사전 준비
 ## 이클립스 설정
