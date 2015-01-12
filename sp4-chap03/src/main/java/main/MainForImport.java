@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import spring.AleadyExistingMemberException;
+import spring.AlreadyExistingMemberException;
 import spring.ChangePasswordService;
 import spring.IdPasswordNotMatchingException;
 import spring.MemberInfoPrinter;
@@ -74,7 +74,7 @@ public class MainForImport {
 		try {
 			regSvc.regist(req);
 			System.out.println("등록했습니다.\n");
-		} catch (AleadyExistingMemberException e) {
+		} catch (AlreadyExistingMemberException e) {
 			System.out.println("이미 존재하는 이메일입니다.\n");
 		}
 	}

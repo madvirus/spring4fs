@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import spring.AleadyExistingMemberException;
+import spring.AlreadyExistingMemberException;
 import spring.MemberRegisterService;
 import spring.RegisterRequest;
 
@@ -49,7 +49,7 @@ public class RegisterController {
 		try {
 			memberRegisterService.regist(regReq);
 			return "register/step3";
-		} catch (AleadyExistingMemberException ex) {
+		} catch (AlreadyExistingMemberException ex) {
 			errors.rejectValue("email", "duplicate");
 			return "register/step2";
 		}
